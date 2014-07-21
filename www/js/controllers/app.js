@@ -7,17 +7,17 @@ troubleshooter.controller('AppCtrl', function($scope, $rootScope, $ionicModal, $
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.LoginModal = modal;
   });
 
   // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
+  $scope.closeLoginModal = function() {
+    $scope.LoginModal.hide();
   },
 
   // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
+  $scope.openLoginModal = function() {
+    $scope.LoginModal.show();
   };
 
   // Perform the login action when the user submits the login form
@@ -27,7 +27,7 @@ troubleshooter.controller('AppCtrl', function($scope, $rootScope, $ionicModal, $
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
-      $scope.closeLogin();
+      $scope.closeLoginModal();
     }, 1000);
     $scope.currentUser = true
   };
