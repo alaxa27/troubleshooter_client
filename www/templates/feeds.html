@@ -1,0 +1,15 @@
+<ion-view title="Feeds">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <h1>Fil d'actu</h1>
+    {{feeds}}
+    <ul>
+        <li ng-repeat="feed in feeds">
+            <a href="#/app/feeds/{{feed._id }}">{{ feed.title  }}</a>
+            <p>{{ feed.content }}</p>
+        </li>
+    </ul>
+  </ion-content>
+</ion-view>
