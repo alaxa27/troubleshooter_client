@@ -1,3 +1,9 @@
+<!---------------------------->
+<!-- FlashService code. Used to display flashmessages -->
+<div class="bar bar-loading bar-{{ rootData.flash.type }}" ng-if="rootData.flash && !rootData.Modal.isShown">
+    {{ rootData.flash.message }}
+</div>
+<!---------------------------->
 <ion-side-menus>
 
   <ion-pane ion-side-menu-content>
@@ -18,15 +24,6 @@
         </ion-item>
         <ion-item nav-clear menu-close ng-if="currentUser" href="#/app/profile">
           Compte
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
         </ion-item>
         <ion-item nav-clear menu-close ng-if="currentUser" ng-click="doLogout()">
           Deconnexion

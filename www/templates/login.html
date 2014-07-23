@@ -2,10 +2,17 @@
   <ion-header-bar>
     <h1 class="title">Login</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+      <button class="button button-clear" ng-click="closeLoginModal()">X</button>
     </div>
   </ion-header-bar>
-  <ion-content>
+  <ion-content ng-class="{'has-loading': rootData.flash }">
+    <!---------------------------->
+    <!-- FlashService code. Used to display flashmessages -->
+    <!-- FlashService code. Add has-loading too-->
+    <div class="bar bar-loading bar-{{ rootData.flash.type }}" ng-if="rootData.flash">
+        {{ rootData.flash.message }}
+    </div>
+    <!---------------------------->
     <form ng-submit="doLogin()">
       <div class="list">
         <label class="item item-input">
@@ -16,14 +23,11 @@
           <span class="input-label">Password</span>
           <input type="password" ng-model="loginData.password">
         </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Connexion</button>
-        </label>
-      </div>
+        <div class="button-bar">
+            <button class="button button-positive" type="submit">Sign In</button>
     </form>
-    <label class="item">
-      <button class="button button-block button-positive" href="#/app/signup" ng-click="closeLogin()" >Creer un compte</button>
-    </label>
+            <a class="button button-calm" href="#/app/signup" ng-click="closeLoginModal()">Sign Up</a>
+        </div>
   </ion-content>
 </div>
 
