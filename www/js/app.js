@@ -39,6 +39,16 @@ var troubleshooter = angular.module('troubleshooter', ['ionic', 'ngResource'])
         }
       }
     })
+    
+    .state('app.feed', {
+      url: "/feeds/:feedId",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/feed.html",
+          controller: 'FeedCtrl'
+        }
+      }
+    })
 
     .state('app.search', {
       url: "/search",
