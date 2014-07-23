@@ -10,8 +10,18 @@
     <!---------------------------->
   <ion-content class="has-header" ng-class="{'has-loading': rootData.flash && !rootData.Modal.isShown}">
     <h1>Fil d'actu</h1>
-     <div class="" ng-repeat="feed in feeds">
-        <a href="#/app/feeds/{{feed._id }}"><h3>{{ feed.title  }}</h3></a>
-	    <p>{{ feed.content | limitTo:140 }}</p>
+    <div class="card" ng-repeat="feed in feeds">
+      <div class="item item-divider">
+          <h2>{{ feed.title }}</h2>
+      </div>
+      <div class="item item-text-wrap">
+          <!-- Here put the desc image on the left little one -->
+          <p>{{ feed.content | limitTo:limChar }}</p>
+      </div>
+      <div class="item item-divider">
+          Posted by: <img src="<!-- Here put mini profile pic -->"> {{ feed.author.username }}
+          <p>{{ feed.publishDate }} ago</p> <!-- make it go on the left. See column and grid from ionic css doc.--> <p><a href="#/app/feeds/{{feed._id}}">Read more -></a></p>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

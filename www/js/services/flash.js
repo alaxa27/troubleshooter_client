@@ -17,7 +17,7 @@ troubleshooter.factory('FlashService', function ($rootScope, $timeout) {
             } else if ( type == "info" ) {
                 cssType = "positive";
             } else {
-                console.log("Error: Wrong type in FlashService call.");
+                console.log("Error: Wrong var type in FlashService call.");
             }
             $rootScope.rootData.loading = true;
             $rootScope.rootData.flash = {
