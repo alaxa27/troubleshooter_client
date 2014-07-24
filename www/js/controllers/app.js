@@ -1,6 +1,6 @@
 troubleshooter.controller('AppCtrl', function($scope, $rootScope, $ionicModal, $timeout, FlashService) {
   $rootScope.rootData = {
-    'apiUrl' : "http://192.168.1.13:1337/api"
+    'apiUrl' : "http://192.168.1.5:1337/api"
     , 'flash': ''
     , 'Modal': {
         'isShown': false
